@@ -146,13 +146,16 @@ function WorkshopLayout() {
         <div className="ws-title">Segments <em>workshop</em></div>
         <span className="ws-meta">panel · {LAY_SP.PANEL.length}</span>
         <span className="ws-meta">{LAY_SP.SEGMENTS.length} cohorts</span>
+        <span className="ws-mock-badge">mock data</span>
         <div className="ws-spacer" />
         <button className="tb-btn">Saved views</button>
         <button className="tb-btn">Commission cohort</button>
         <button className="ws-cta">＋ New segment from selection</button>
       </div>
-
       <div className="ws-side">
+        <div className="ws-population-note">
+          Synthetic population — no real respondents. Select a cohort below to filter the panel. Your segment selection when creating an analysis controls which groups are synthesised.
+        </div>
         <div className="ws-side-h">Cohorts</div>
         {LAY_SP.SEGMENTS.map((seg) => {
           const members = LAY_SP.PANEL.filter((r) => r.segment === seg.id)

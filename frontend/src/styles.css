@@ -1327,3 +1327,73 @@ button { font: inherit; color: inherit; }
   cursor: default;
 }
 .analysis-footer-link:hover { color: var(--ink); }
+
+/* ─── Empty state — how to use link ────────────────────────── */
+.empty-how-to-use {
+  margin-top: 16px;
+}
+.empty-htu-link {
+  appearance: none; background: none; border: none; padding: 0;
+  font-size: 13px; color: var(--accent); cursor: default;
+  text-decoration: underline; text-underline-offset: 3px;
+}
+.empty-htu-link:hover { color: var(--accent-ink); }
+
+/* ─── How To Use page ───────────────────────────────────────── */
+.htu-page {
+  height: 100%; overflow-y: auto;
+  padding: 48px 32px;
+  display: flex; justify-content: center;
+}
+.htu-inner {
+  width: 100%; max-width: 680px;
+}
+.htu-back {
+  appearance: none; background: none; border: 1px solid var(--rule);
+  border-radius: 8px; padding: 6px 12px;
+  font-size: 13px; color: var(--muted); cursor: default;
+  margin-bottom: 40px; display: inline-flex; align-items: center; gap: 6px;
+}
+.htu-back:hover { background: var(--hover); color: var(--ink); }
+.htu-hero {
+  text-align: center; margin-bottom: 52px;
+}
+.htu-glyph {
+  font-family: var(--mono); font-size: 28px; color: var(--faint);
+  margin-bottom: 16px;
+}
+.htu-title {
+  font-family: var(--serif); font-weight: 400;
+  font-size: 32px; letter-spacing: -0.02em;
+  margin: 0 0 10px;
+}
+.htu-sub {
+  color: var(--muted); font-size: 15px; margin: 0;
+}
+.htu-steps {
+  display: flex; flex-direction: column; gap: 0;
+  border: 1px solid var(--rule); border-radius: var(--r-xl);
+  background: var(--surface); overflow: hidden;
+}
+.htu-step {
+  display: flex; gap: 20px;
+  padding: 24px 28px;
+  border-bottom: 1px solid var(--rule-2);
+}
+.htu-step:last-child { border-bottom: none; }
+.htu-step--warn { background: rgba(176, 119, 43, 0.04); }
+.htu-step-num {
+  font-family: var(--mono); font-size: 13px; color: var(--faint);
+  flex-shrink: 0; width: 24px; padding-top: 3px;
+}
+.htu-step--warn .htu-step-num { color: var(--t); }
+.htu-step-body { flex: 1; }
+.htu-step-title {
+  font-size: 15px; font-weight: 600; color: var(--ink);
+  margin: 0 0 6px; letter-spacing: -0.01em;
+}
+.htu-step--warn .htu-step-title { color: var(--t); }
+.htu-step-desc {
+  font-size: 13.5px; color: var(--muted); line-height: 1.6; margin: 0;
+}
+.htu-step-desc strong { color: var(--ink-2); font-weight: 600; }

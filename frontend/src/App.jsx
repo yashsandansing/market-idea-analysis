@@ -9,6 +9,7 @@ import NewAnalysisPage from './pages/NewAnalysisPage'
 import SegmentsPage from './pages/SegmentsPage'
 import PromptLibraryPage from './pages/PromptLibraryPage'
 import SettingsPage from './pages/SettingsPage'
+import HowToUsePage from './pages/HowToUsePage'
 
 export default function App() {
   const { path, navigate } = useRouter()
@@ -19,7 +20,8 @@ export default function App() {
   const isSegments = path === '/segments'
   const isPrompts = path === '/prompts'
   const isSettings = path === '/settings'
-  const noSidebar = isNew || isSegments || isSettings
+  const isHowToUse = path === '/how-to-use'
+  const noSidebar = isNew || isSegments || isSettings || isHowToUse
 
   const handleGenerate = (formData) => {
     navigate('/')
@@ -64,6 +66,8 @@ export default function App() {
             onSave={setKeys}
             onBack={() => navigate('/')}
           />
+        ) : isHowToUse ? (
+          <HowToUsePage onBack={() => navigate('/')} />
         ) : (
           <AnalysisPage
             config={config}
@@ -71,6 +75,7 @@ export default function App() {
             isSectionStreaming={isSectionStreaming}
             isRunning={isRunning}
             onNew={() => navigate('/new')}
+            onHowToUse={() => navigate('/how-to-use')}
             onRerun={rerun}
             onRerunSection={rerunSection}
           />

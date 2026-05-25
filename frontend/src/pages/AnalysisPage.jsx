@@ -17,7 +17,7 @@ const SECTION_PROMPT_TYPES = {
   channels: ["channels_distribution"],
 };
 
-function EmptyState({ onNew }) {
+function EmptyState({ onNew, onHowToUse }) {
   return (
     <div className="empty-state">
       <div className="empty-state-inner">
@@ -30,6 +30,11 @@ function EmptyState({ onNew }) {
         <button className="na-btn primary" onClick={onNew}>
           + New analysis
         </button>
+        <div className="empty-how-to-use">
+          <button className="empty-htu-link" onClick={onHowToUse}>
+            How to use this tool →
+          </button>
+        </div>
       </div>
     </div>
   );
@@ -41,6 +46,7 @@ export default function AnalysisPage({
   isSectionStreaming,
   isRunning,
   onNew,
+  onHowToUse,
   onRerun,
   onRerunSection,
 }) {
@@ -53,7 +59,7 @@ export default function AnalysisPage({
     }
   }, [config?.id]);
 
-  if (!config) return <EmptyState onNew={onNew} />;
+  if (!config) return <EmptyState onNew={onNew} onHowToUse={onHowToUse} />;
 
   const segmentObj = SEGMENTS.find((s) => s.id === activeSegment);
   const segmentName = segmentObj?.name ?? activeSegment ?? "";
