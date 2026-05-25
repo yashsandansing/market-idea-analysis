@@ -8,11 +8,8 @@
       "maxDuration": 60
     }
   },
-  "routes": [
-    { "src": "/api/(.*)", "dest": "/api/index.py" },
-    { "src": "^/@(.*)", "dest": "/@$1" },
-    { "src": "^/__(.*)$", "dest": "/__$1" },
-    { "handle": "filesystem" },
-    { "src": "^(?!.*\\.[^/]+$).*", "dest": "/index.html" }
+  "rewrites": [
+    { "source": "/api/:path*", "destination": "/api/index.py" },
+    { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
